@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:todoapp1/pages/first_page.dart';
-import 'package:todoapp1/pages/second_page.dart';
+import 'package:todoapp1/pages/homepage.dart';
+import 'package:todoapp1/pages/settingspage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +18,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false, // remove the debug bunner
       home: FirstPage(),
       routes: {
-        '/fistpage': (context) => FirstPage(),
-        '/secondpage': (context) => SecondPage(),
+        '/homepage': (context) => Homepage(),
+        '/settings': (context) => Settingspage(),
       },
     );
   }

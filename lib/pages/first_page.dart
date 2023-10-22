@@ -1,7 +1,6 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:todoapp1/pages/second_page.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({Key? key}) : super(key: key);
@@ -16,13 +15,36 @@ class FirstPage extends StatelessWidget {
       ),
 
       // create the body
-      body: Center(
-        child: ElevatedButton(
-          child: Text("Go To Second Page"),
-          onPressed: () {
-            // naviage to second page
-            Navigator.pushNamed(context, '/secondpage');
-          },
+      drawer: Drawer(
+        backgroundColor: Colors.deepPurple[100],
+        child: Column(
+          children: [
+            DrawerHeader(
+                child: Icon(
+              Icons.favorite,
+              size: 48,
+            )),
+
+            // home page list tile
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("H O M E"),
+              onTap: () {
+                Navigator.pop(context);
+                //GO  to homw page
+                Navigator.pushNamed(context, "/homepage");
+              },
+            ),
+
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("S E T T I N G S"),
+              onTap: () {
+                //GO  to homw page
+                Navigator.pushNamed(context, "/settingspage");
+              },
+            ),
+          ],
         ),
       ),
     );
